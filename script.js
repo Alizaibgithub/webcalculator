@@ -43,13 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentInput += ')';
             }
             displayBottom.value = currentInput;
-        }
-        else if (value === '=') {
+        } else if (value === '=') {
             if (previousInput && currentInput && operator) {
                 const result = calculate(previousInput, operator, currentInput);
+                if (result === 'Error') {
+                    displayBottom.value = 'Error';
+                    resetCalculator();
+                    return;
+                }
                 displayTop.value = `${previousInput} ${operator} ${currentInput} =`;
                 displayBottom.value = result;
-                currentInput = result;
+                currentInput = String(result);
                 previousInput = '';
                 operator = '';
             }
@@ -78,12 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
             case '×':
                 return num1 * num2;
             case '÷':
+                if (num2 === 0) return 'Error';
                 return num1 / num2;
             default:
                 return 0;
         }
     }
-
     function resetCalculator() {
         currentInput = '';
         previousInput = '';
