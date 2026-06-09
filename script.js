@@ -34,7 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentInput = String(parseFloat(currentInput) / 100);
                 displayBottom.value = currentInput;
             }
-        } else if (value === '=') {
+        } else if (value === '( )') {
+            const openCount = (currentInput.match(/\(/g) || []).length;
+            const closeCount = (currentInput.match(/\)/g) || []).length;
+            if (openCount === closeCount) {
+                currentInput += '(';
+            } else {
+                currentInput += ')';
+            }
+            displayBottom.value = currentInput;
+        }
+        else if (value === '=') {
             if (previousInput && currentInput && operator) {
                 const result = calculate(previousInput, operator, currentInput);
                 displayTop.value = `${previousInput} ${operator} ${currentInput} =`;
