@@ -37,7 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
             displayBottom.value = currentInput;
         } else if (value === '%') {
             if (currentInput) {
-                currentInput = String(parseFloat(currentInput) / 100);
+                if (previousInput && operator) {
+                    currentInput = String((parseFloat(previousInput) * parseFloat(currentInput)) / 100);
+                } else {
+                    currentInput = String(parseFloat(currentInput) / 100);
+                }
                 displayBottom.value = currentInput;
             }
         } else if (value === '( )') {
