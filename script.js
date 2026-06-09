@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', () => {
-            const value = button.innerText;
+            const value = button.dataset.value;
 
             if (button.classList.contains('btn-operand')) {
                 handleOperand(value);
