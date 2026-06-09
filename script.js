@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleOperand(value) {
         if (value === '.' && currentInput.includes('.')) return;
+        if (value === '0' && currentInput === '0') return;
+        if (value !== '.' && currentInput === '0') {
+            currentInput = value;
+            displayBottom.value = currentInput;
+            return;
+        }
         currentInput += value;
         displayBottom.value = currentInput;
     }
