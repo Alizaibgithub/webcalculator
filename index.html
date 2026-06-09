@@ -4,39 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webCalculator</title>
+    <title>Web Calculator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <div id="container">
-        <section id="display">
-            <input type="text" class="display-input" id="display-top">
-            <input type="text" class="display-input" id="display-bottom">
-        </section>
-        <button class="btn btn-operator" id="btn-ac" data-value="AC">AC</button>
-        <button class="btn btn-operator" id="btn-braces" data-value="( )">( )</button>
-        <button class="btn btn-operator" id="btn-percent" data-value="%"><i class="fa-solid fa-percent"></i></button>
-        <button class="btn btn-operator" id="btn-divide" data-value="÷"><i class="fa-solid fa-divide"></i></button>
-        <button class="btn btn-operand" id="btn-seven" data-value="7">7</button>
-        <button class="btn btn-operand" id="btn-eight" data-value="8">8</button>
-        <button class="btn btn-operand" id="btn-nine" data-value="9">9</button>
-        <button class="btn btn-operator" id="btn-multiply" data-value="×"><i class="fa-solid fa-xmark"></i></button>
-        <button class="btn btn-operand" id="btn-four" data-value="4">4</button>
-        <button class="btn btn-operand" id="btn-five" data-value="5">5</button>
-        <button class="btn btn-operand" id="btn-six" data-value="6">6</button>
-        <button class="btn btn-operator" id="btn-minus" data-value="-"><i class="fa-solid fa-minus"></i></button>
-        <button class="btn btn-operand" id="btn-one" data-value="1">1</button>
-        <button class="btn btn-operand" id="btn-two" data-value="2">2</button>
-        <button class="btn btn-operand" id="btn-three" data-value="3">3</button>
-        <button class="btn btn-operator" id="btn-plus" data-value="+"><i class="fa-solid fa-plus"></i></button>
-        <button class="btn btn-operand" id="btn-point" data-value="."><i class="fa-solid fa-circle-dot"></i></button>
-        <button class="btn btn-operand" id="btn-zero" data-value="0">0</button>
-        <button class="btn btn-operator" id="btn-cancel" data-value="DEL"><i
-                class="fa-solid fa-delete-left"></i></button>
-        <button class="btn btn-operator" id="btn-equal" data-value="="><i class="fa-solid fa-equals"></i></button>
+    <div class="calculator-wrapper">
+        <div class="calculator-container">
+            <!-- Display Section -->
+            <div class="display-section">
+                <input type="text" class="display-input" id="display-top" readonly>
+                <input type="text" class="display-input" id="display-bottom" placeholder="0" readonly>
+            </div>
+
+            <!-- Buttons Grid -->
+            <div class="buttons-grid">
+                <!-- First Row: AC, (), %, ÷ -->
+                <button class="btn btn-function" id="btn-ac">AC</button>
+                <button class="btn btn-operator" id="btn-braces">( )</button>
+                <button class="btn btn-operator" id="btn-percent">%</button>
+                <button class="btn btn-operator" id="btn-divide">÷</button>
+
+                <!-- Second Row: 7, 8, 9, × -->
+                <button class="btn btn-number" id="btn-seven">7</button>
+                <button class="btn btn-number" id="btn-eight">8</button>
+                <button class="btn btn-number" id="btn-nine">9</button>
+                <button class="btn btn-operator" id="btn-multiply">×</button>
+
+                <!-- Third Row: 4, 5, 6, − -->
+                <button class="btn btn-number" id="btn-four">4</button>
+                <button class="btn btn-number" id="btn-five">5</button>
+                <button class="btn btn-number" id="btn-six">6</button>
+                <button class="btn btn-operator" id="btn-minus">−</button>
+
+                <!-- Fourth Row: 1, 2, 3, + -->
+                <button class="btn btn-number" id="btn-one">1</button>
+                <button class="btn btn-number" id="btn-two">2</button>
+                <button class="btn btn-number" id="btn-three">3</button>
+                <button class="btn btn-operator" id="btn-plus">+</button>
+
+                <!-- Fifth Row: 0, ., ⌫, = -->
+                <button class="btn btn-number" id="btn-zero">0</button>
+                <button class="btn btn-number" id="btn-point">.</button>
+                <button class="btn btn-number" id="btn-backspace">⌫</button>
+                <button class="btn btn-equal" id="btn-equal">=</button>
+            </div>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 
