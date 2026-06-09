@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 operator = '';
             }
         } else {
-            if (currentInput) {
-                if (previousInput && operator) {
+            if (currentInput || previousInput) {
+                if (currentInput && previousInput && operator) {
                     const result = calculate(previousInput, operator, currentInput);
                     if (result === 'Error') {
                         displayBottom.value = 'Error';
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         return;
                     }
                     previousInput = String(result);
-                } else {
+                } else if (currentInput) {
                     previousInput = currentInput;
                 }
                 currentInput = '';
