@@ -59,14 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             if (currentInput) {
-                if (previousInput) {
-                    previousInput = calculate(previousInput, operator, currentInput);
+                if (previousInput && operator) {
+                    const result = calculate(previousInput, operator, currentInput);
+                    if (result === 'Error') {
+                        displayBottom.value = 'Error';
+                        resetCalculator();
+                        return;
+                    }
+                    previousInput = String(result);
                 } else {
                     previousInput = currentInput;
                 }
                 currentInput = '';
                 operator = value;
                 displayTop.value = `${previousInput} ${operator}`;
+                displayBottom.value = '';
             }
         }
     }
