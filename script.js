@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (value === 'DEL') {
             currentInput = currentInput.slice(0, -1);
             displayBottom.value = currentInput;
+        } else if (value === '%') {
+            if (currentInput) {
+                currentInput = String(parseFloat(currentInput) / 100);
+                displayBottom.value = currentInput;
+            }
         } else if (value === '=') {
             if (previousInput && currentInput && operator) {
                 const result = calculate(previousInput, operator, currentInput);
