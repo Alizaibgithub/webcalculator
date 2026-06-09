@@ -38,11 +38,15 @@
     #display-top {
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
+        font-size: medium;
+        color: rgb(150, 150, 150);
     }
 
     #display-bottom {
         border-bottom-right-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
+        font-size: xx-large;
+        color: white;
     }
 
     .btn {
