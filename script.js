@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return 0;
         }
     }
+
     function resetCalculator() {
         currentInput = '';
         previousInput = '';
