@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleOperator(value) {
         if (value === 'AC') {
             resetCalculator();
+        } else if (value === 'DEL') {
+            currentInput = currentInput.slice(0, -1);
+            displayBottom.value = currentInput;
         } else if (value === '=') {
             if (previousInput && currentInput && operator) {
                 const result = calculate(previousInput, operator, currentInput);
